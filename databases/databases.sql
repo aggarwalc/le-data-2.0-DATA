@@ -18,7 +18,7 @@ FROM (
 
   WHERE tags.TagName in ('mysql', 'postgresql', 'mongodb',
                          'oracle', 'db2', 'sql-server', 'sqlite',
-                         'redis', 'mariadb')
+                         'redis', 'mariadb', 'realm')
   AND Posts.PostTypeId = 1
   GROUP BY datepart(year,Posts.CreationDate),
            datepart(month,Posts.CreationDate),
