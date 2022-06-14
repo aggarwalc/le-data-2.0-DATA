@@ -19,23 +19,30 @@ for year in range(2008,2023):
 
 
         url = f"https://github.com/search?q=created%3A{date}&type=Repositories"
-        
+
         while (True):
             r = requests.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
-            chicken = soup.select("a.filter-item")
-            noodle = list(soup.select("h3")[1].stripped_strings)[0].split(' ')
+            print(soup)
+            top_lang_html = soup.select("a.filter-item")
 
-            if len(noodle) == 3:
-                print(noodle)
+            # handles rate limit
+            try:
+                total_repos_html = list(soup.select("h3")[1].stripped_strings)[0].split(' ')
+            except:
+                total_repos_html = []
+
+            # handles incomplete data retrieval
+            if len(total_repos_html) == 3:
+                print(total_repos_html)
                 break
 
 
-        month_total = int(noodle[0].replace(',', ''))
+        month_total = int(total_repos_html[0].replace(',', ''))
 
 
         top_tags_total = 0
-        for anchor_tag in chicken:
+        for anchor_tag in top_lang_html:
             [count, lang] = list(anchor_tag.stripped_strings)
             count = int(count.replace(',', ''))
             df = df.append({'date' : date, 'language' : lang, 'count' : count}, ignore_index = True)
@@ -46,6 +53,6 @@ for year in range(2008,2023):
 
 
 print(df)
-df.to_csv('gh_top_languages_results.csv')
-
-# print(df.pivot(index='date', columns='language', values='count'))
+df = df.pivot(index='date', columns='language', values='count')
+df = df.fillna(0)
+df.to_csv('gh_top_monthly_results.csv')
