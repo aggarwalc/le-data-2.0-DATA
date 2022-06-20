@@ -16,7 +16,7 @@ FROM (
     INNER JOIN Tags AS tags
     ON pt.TagId = tags.Id
 
-  WHERE tags.TagName in ('c++', 'c#', 'php',
+  WHERE tags.TagName in ('c++', 'c#', 'php', 'ruby',
                          'python', 'javascript', 'java')
   AND Posts.PostTypeId = 1
   GROUP BY datepart(year,Posts.CreationDate),

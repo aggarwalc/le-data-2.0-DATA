@@ -16,7 +16,7 @@ FROM (
     INNER JOIN Tags AS tags
     ON pt.TagId = tags.Id
 
-  WHERE tags.TagName in ('c++','c#','php','python','javascript',
+  WHERE tags.TagName in ('c++','c#','php', 'ruby', 'python','javascript',
                          'java','swift','kotlin','react-native',
                          'dart', 'objective-c','mysql','postgresql',
                          'mongodb','oracle','db2','sql-server','sqlite',
