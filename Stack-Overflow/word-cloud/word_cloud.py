@@ -4,9 +4,9 @@ from PIL import Image
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-shape_mask = np.array(Image.open("word-cloud/shape.png"))
+shape_mask = np.array(Image.open("circle.png"))
 
-df = pd.read_csv('word-cloud/wordcloud_results.csv')
+df = pd.read_csv('wordcloud_results.csv')
 tag_dict= dict(zip(df.TagName, df.Count))
 print(tag_dict)
 
