@@ -27,7 +27,7 @@ if date == '2022-06': break
 ```
 4. Run the program and replace the CSV file in the folder with the new CSV file that the web scraping program returns
 5. Make sure the name of the new CSV file is the same as the old one!
-6. (Extra Step for gh-top) Run gh-top-yearly.py
+6. (Extra step for gh-top) Run gh-top-yearly.py
 
 ### LinkedIn
 The LinkedIn data was gathered by web scraping as well.
