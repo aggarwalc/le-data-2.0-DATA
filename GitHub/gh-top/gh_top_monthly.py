@@ -37,7 +37,6 @@ def calc_month_total(url):
 
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
-
 languages = {'C#':'C%23', 'C++':'C%2B%2B', 'Java':'Java', 'JavaScript':'JavaScript', 'PHP':'PHP', 'Python':'Python', 'Ruby':'Ruby',
              'HTML':'HTML', 'CSS':'CSS', 'TypeScript':'TypeScript', 'C':'C'}
 
