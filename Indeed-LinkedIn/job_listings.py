@@ -10,8 +10,8 @@ languages = {'C#':'C%23', 'C++':'C%2B%2B', 'Java':'Java',
              'JavaScript':'JavaScript', 'PHP':'PHP', 'Python':'Python',
              'Ruby':'Ruby', 'Swift':'Swift', 'Kotlin':'Kotlin',
              'Dart':'Dart', 'Objective-C':'Objective-C', 'R':'R',
-             'MATLAB':'MATLAB', 'Julia':'Julia', 'Fortran':'Fortran',
-             'SPSS':'SPSS%20statistical', 'SAS':'SAS%20statistical'}
+             'MATLAB':'MATLAB', 'Julia':'Julia', 'Fortran':'Fortran'}
+             # 'SPSS':'SPSS%20statistical', 'SAS':'SAS%20statistical'}
 
 for lang in languages:
     step += 1
@@ -25,6 +25,6 @@ for lang in languages:
     df = df.append({'value':LinkedIn_count, 'language':lang}, ignore_index=True)
 
 df = df.sort_values(by='value', ascending=False, ignore_index=True)
-df['step'] = list(range(1, 18))
+df['step'] = list(range(1, 16))
 
-df.to_csv('job_listings_results_7_07.csv', index=False)
+df.to_csv('./Indeed-Linkedin/job_listings_results_current.csv', index=False)
