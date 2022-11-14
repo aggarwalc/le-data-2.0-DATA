@@ -27,4 +27,4 @@ for lang in languages:
 df = df.sort_values(by='value', ascending=False, ignore_index=True)
 df['step'] = list(range(1, 16))
 
-df.to_csv('./Indeed-Linkedin/job_listings_results_current.csv', index=False)
+df.to_csv('./job_listings_results_current.csv', index=False)
