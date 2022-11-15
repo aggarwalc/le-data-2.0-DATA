@@ -48,7 +48,7 @@ for year in range(2008,2023):
         else:
             date = f"{year}-{month}"
 
-        if date == '2022-06': break
+        if date == '2022-11': break
         print(date)
 
         url = f"https://github.com/search?q=created%3A{date}&type=Repositories"
