@@ -23,6 +23,7 @@ for lang in languages:
     LinkedIn_count = int(''.join(char for char in results[0] if char.isdigit()))
 
     df = df.append({'value':LinkedIn_count, 'language':lang}, ignore_index=True)
+    time.sleep(7)
 
 df = df.sort_values(by='value', ascending=False, ignore_index=True)
 df['step'] = list(range(1, 16))
